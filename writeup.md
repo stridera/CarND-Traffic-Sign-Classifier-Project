@@ -79,7 +79,7 @@ Here is an example of a traffic sign image before and after preprocessing.
 
 The dataset includes a good portion of training, testing, and validation data sets.  The training set included nearly 35k images, with the test set containing nearly 13k images.  Since the portion of test to training was so high, I didn't feel the need to strip any additional images from the training set.  Additionally, I had nearly 5k images in the validation set that I used for final accuracy numbers.
 
-####3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 The code for my final model is located in the **Model Architecture** section of the ipython notebook. 
 
@@ -109,7 +109,7 @@ My final model consisted of the following layers:
 |||
 |Fully Connected Final Layer|inputs 128, outputs n_classes (43)|
 
-####4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 The code for training the model is located in the **Train, Validate, and Test the Model** of the ipython notebook. 
 
@@ -129,7 +129,7 @@ The outside marks the epochs.  For each epoch, I shuffle and preprocess the imag
 
 The inside loop handles the batch processing.  I know that batches are supposed to be used to allow large datasets to run on hardware with limited memory, but increasing this always lowered my accuracy.  I have a machine with 64GB memory and 2 1080Ti video cards (11G memory each) and the accuracy would drop if I increased the batch size.  I'm not sure why.
 
-####5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+#### 5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 The code for calculating the accuracy of the model is located in the ninth cell of the Ipython notebook.
 
@@ -158,9 +158,9 @@ I also added a dropout to add a little bit more randomness to the model and help
 
 I adjusted the weights to handle the new input size.  I played around with batch size and epochs, and found that 128 batch size brought it to the max quickest, and I've never seen benefits beyond 10 epochs, however, I kept it around 15 since it's quick.
 
-###Test a Model on New Images
+### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 The image I showed earlier highlights the six German traffic signs that I found on the web, resized and pre-post processing:
 
@@ -168,7 +168,7 @@ The image I showed earlier highlights the six German traffic signs that I found 
 
 Most of the images that were returned (without banners pasted all over them from various groups) are very clean.  I predicted that most, if not all of these images would be correctly identified.
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 The code for making predictions on my final model is located in the 15th cell of the Ipython notebook.
 
@@ -185,7 +185,7 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 4 of the 6 traffic signs, which gives an accuracy of 66%. This compares modestly to the rest of the data set.  I'm thinking a few more steps of preparing the data for overfitting may have helped this.
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for showing predictions on my final model is located in the 17th cell of the Ipython notebook.
 
