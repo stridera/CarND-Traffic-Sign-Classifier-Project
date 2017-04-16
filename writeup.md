@@ -166,7 +166,51 @@ The image I showed earlier highlights the six German traffic signs that I found 
 
 ![Preprocessing Example](writeup_images/Preprocessing.png)
 
-Most of the images that were returned (without banners pasted all over them from various groups) are very clean.  I predicted that most, if not all of these images would be correctly identified.
+**1. Wild Animal Crossing**
+
+
+<img src="https://raw.githubusercontent.com/stridera/CarND-Traffic-Sign-Classifier-Project/master/net_images/deer.png" width=50>
+
+
+I full expect this image to be classified correctly.  It has a clear border and the image is very clean.  It might be too clean compared to the classifier data, but it should be fine.
+
+**2. End of All Speed Limits**
+
+
+<img src="https://raw.githubusercontent.com/stridera/CarND-Traffic-Sign-Classifier-Project/master/net_images/end_of_speed_limit.png" width=50>
+
+
+This is a PNG file, and the transparent background is seen as a black field when read in.  It should still detect the edges fine, but I wonder if this could cause issues when read in.  Also, since the circle goes directly to the edge, it might not see the edges correctly and misclassify.
+
+**3. No Entry**
+
+
+<img src="https://raw.githubusercontent.com/stridera/CarND-Traffic-Sign-Classifier-Project/master/net_images/no_entry.png" width=50>
+
+
+This is another one that I expect to be classified correctly.  Again, this goes to the edge of the image, so it might cause some issues if we trained everything to have a border.
+
+**4. Speed Limit - 60km/h**
+
+
+<img src="https://raw.githubusercontent.com/stridera/CarND-Traffic-Sign-Classifier-Project/master/net_images/speed_60.png" width=50>
+
+
+This is another image with a transparent background that is being seen as black.  With the color data, however, it does give a nice contrast between the black and the sign, so hopefully it won't affect it.  Another image where I could probably get better results if I add a small border around it.
+
+**5. Stop**
+
+
+<img src="https://raw.githubusercontent.com/stridera/CarND-Traffic-Sign-Classifier-Project/master/net_images/stop.png" width=50>
+
+
+This image has some weird black spots in the image that I don't see on the source, however, it should be clean otherwise.  This is another image that might be misclassified due to the edges of the sign going to the edge of the window.  In fact, I think this is highly likely with this sign since half the outside edges can be missed due to this.
+
+**6. Turn Right**
+
+<img src="https://raw.githubusercontent.com/stridera/CarND-Traffic-Sign-Classifier-Project/master/net_images/turn_right.png" width=50>
+
+Another image with weird black spots on it.  However, since this is a circular image, I think it should be classified correctly with no concerns to the image going to the edge.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
